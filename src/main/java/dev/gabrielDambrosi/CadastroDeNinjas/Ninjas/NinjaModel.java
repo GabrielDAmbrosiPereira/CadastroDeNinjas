@@ -2,12 +2,18 @@ package dev.gabrielDambrosi.CadastroDeNinjas.Ninjas;
 
 import dev.gabrielDambrosi.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 //ENTITY TRANSFORMA UMA CLASSE EM UMA ENTIDADE DO BANCO DE DADOS
 @Entity
 //TABLE GERA A TABELA DE CADASTRO DE NINJAS
 @Table(name = "tb_cadastro")
+@NoArgsConstructor // CRIA O CONSTRUTOR NO ARGS
+@AllArgsConstructor // CRIA O CONSTRUTOR ALL ARGS
+@Data // CRIA OS GETTERS E SETTERS
 public class NinjaModel {
 
     @Id
@@ -25,36 +31,4 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id") // FOREIGN KEY / CHAVE ESTRANGEIRA
     private MissoesModel missoes;
 
-    public NinjaModel() {
-    }
-
-    public NinjaModel(String nome, String email, int idade) {
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
 }
