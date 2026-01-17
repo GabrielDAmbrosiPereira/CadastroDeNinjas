@@ -2,9 +2,9 @@ package dev.gabrielDambrosi.CadastroDeNinjas.Ninjas;
 
 import dev.gabrielDambrosi.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor; // LOMBOK CONSTROI O ALL ARGS CONSTRUCTOR
+import lombok.Data; // LOMBOK CRIA GETTERS E SETTERS
+import lombok.NoArgsConstructor; // LOMBOK CONSTROI O NO ARGS CONSTRUCTOR
 
 
 //ENTITY TRANSFORMA UMA CLASSE EM UMA ENTIDADE DO BANCO DE DADOS
@@ -16,20 +16,20 @@ import lombok.NoArgsConstructor;
 @Data // CRIA OS GETTERS E SETTERS
 public class NinjaModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // IDENTIFICA MINHA PK (PRIMARY KEY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // GERA O VALOR DA ID SEQUENCIAL COM NUMEROS
     private Long id;
 
     private String nome;
 
-    @Column(unique = true)
+    @Column(unique = true) // ANNOTATION FAZ COM QUE NÃO POSSA TER 2 EMAILS IGUAIS NO BANCO DE DADOS NA MESMA TABELA
     private String email;
 
     private int idade;
 
-    // @ManyToOne - um ninja tem uma única missão
+    // @ManyToOne - MANY NINJAS TO ONE MISSION
     @ManyToOne
-    @JoinColumn(name = "missoes_id") // FOREIGN KEY / CHAVE ESTRANGEIRA
+    @JoinColumn(name = "missoes_id") // FOREIGN KEY / CHAVE ESTRANGEIRA - ADICIONA UMA COLUNA NA TABELA CADASTRO COM O MISSOES ID DA CLASSE MISSOESMODEL (FK)
     private MissoesModel missoes;
 
 }
