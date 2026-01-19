@@ -18,14 +18,21 @@ public class NinjaModel {
 
     @Id // IDENTIFICA MINHA PK (PRIMARY KEY)
     @GeneratedValue(strategy = GenerationType.IDENTITY) // GERA O VALOR DA ID SEQUENCIAL COM NUMEROS
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "nome")
     private String nome;
 
-    @Column(unique = true) // ANNOTATION FAZ COM QUE NÃO POSSA TER 2 EMAILS IGUAIS NO BANCO DE DADOS NA MESMA TABELA
+
+    @Column(unique = true, name = "email") // ANNOTATION FAZ COM QUE NÃO POSSA TER 2 EMAILS IGUAIS NO BANCO DE DADOS NA MESMA TABELA
     private String email;
 
+    @Column(name = "idade")
     private int idade;
+
+    @Column(name = "img_url")
+    private String imgUrl;
 
     // @ManyToOne - MANY NINJAS TO ONE MISSION
     @ManyToOne
