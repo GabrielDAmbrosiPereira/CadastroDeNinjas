@@ -26,16 +26,19 @@ public class NinjaController {
     public String criarNinja(){
         return "Ninja Criado";
     }
-    // MOSTRAR NINJA POR ID (READ)
+
+    // MOSTRAR NINJA(READ)
     @GetMapping("/listar")
     public List<NinjaModel> listarNinjas(){
         return ninjaService.listarNinjas();
     }
-    // MOSTRAR OS NINJAS (READ)
-    @GetMapping("/listarID")
-    public String listarTodosNinjasPorId(){
-        return ("Todos os Ninjas por ID");
+
+    // MOSTRAR OS NINJAS POR ID (READ)
+    @GetMapping("/listar/{id}")
+    public  NinjaModel listarTodosNinjasPorId(@PathVariable Long id){
+        return ninjaService.listarNinjasPorId(id);
     }
+
     // ALTERAR DADOS DOS NINJAS (UPDATE)
     @PutMapping("/alterar")
     public String alterarNinjasPorId(){
