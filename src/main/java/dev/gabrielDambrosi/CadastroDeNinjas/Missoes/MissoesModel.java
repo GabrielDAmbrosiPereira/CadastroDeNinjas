@@ -1,5 +1,6 @@
 package dev.gabrielDambrosi.CadastroDeNinjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.gabrielDambrosi.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,5 +26,6 @@ public class MissoesModel {
 
     //  @OneToMany - ONE MISSION TO MANY NINJAS
     @OneToMany(mappedBy = "missoes")
+    @JsonIgnore
     private List<NinjaModel> ninja;
 }
