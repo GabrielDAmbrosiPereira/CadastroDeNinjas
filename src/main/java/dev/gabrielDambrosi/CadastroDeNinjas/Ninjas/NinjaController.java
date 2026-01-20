@@ -19,12 +19,12 @@ public class NinjaController {
         return "Ninja Criado";
     }
     // MOSTRAR NINJA POR ID (READ)
-    @GetMapping("/todos")
+    @GetMapping("/listar")
     public String mostrarTodosNinjas(){
         return ("Todos os Ninjas");
     }
     // MOSTRAR OS NINJAS (READ)
-    @GetMapping("/todosID")
+    @GetMapping("/listarID")
     public String mostrarTodosNinjasPorId(){
         return ("Todos os Ninjas por ID");
     }
