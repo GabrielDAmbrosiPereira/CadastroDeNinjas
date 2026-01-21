@@ -1,10 +1,17 @@
 package dev.gabrielDambrosi.CadastroDeNinjas.Ninjas;
 
 import dev.gabrielDambrosi.CadastroDeNinjas.Missoes.MissoesModel;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor; // LOMBOK CONSTROI O ALL ARGS CONSTRUCTOR
-import lombok.Data; // LOMBOK CRIA GETTERS E SETTERS
-import lombok.NoArgsConstructor; // LOMBOK CONSTROI O NO ARGS CONSTRUCTOR
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity; // LOMBOK CONSTROI O ALL ARGS CONSTRUCTOR
+import jakarta.persistence.GeneratedValue; // LOMBOK CRIA GETTERS E SETTERS
+import jakarta.persistence.GenerationType; // LOMBOK CONSTROI O NO ARGS CONSTRUCTOR
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 //ENTITY TRANSFORMA UMA CLASSE EM UMA ENTIDADE DO BANCO DE DADOS
@@ -15,7 +22,6 @@ import lombok.NoArgsConstructor; // LOMBOK CONSTROI O NO ARGS CONSTRUCTOR
 @AllArgsConstructor // CRIA O CONSTRUTOR ALL ARGS
 @Data // CRIA OS GETTERS E SETTERS
 public class NinjaModel {
-
     @Id // IDENTIFICA MINHA PK (PRIMARY KEY)
     @GeneratedValue(strategy = GenerationType.IDENTITY) // GERA O VALOR DA ID SEQUENCIAL COM NUMEROS
     @Column(name = "id")
