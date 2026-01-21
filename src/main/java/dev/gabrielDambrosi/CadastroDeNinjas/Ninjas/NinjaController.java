@@ -19,12 +19,13 @@ public class NinjaController {
         return "Essa é a minha primeira mensagem nessa rota";
     }
 
+
     // TODO ESSE É O CRUD (CREATE, READ, UPDATE, DELETE)
 
     //ADICIONAR UM NINJA (CREATE)
     @PostMapping("/criar")
-    public String criarNinja(){
-        return "Ninja Criado";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+        return ninjaService.criarNinja(ninja);
     }
 
     // MOSTRAR NINJA(READ)
