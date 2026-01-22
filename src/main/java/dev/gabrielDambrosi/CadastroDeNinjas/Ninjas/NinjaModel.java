@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 //ENTITY TRANSFORMA UMA CLASSE EM UMA ENTIDADE DO BANCO DE DADOS
@@ -21,6 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // CRIA O CONSTRUTOR NO ARGS
 @AllArgsConstructor // CRIA O CONSTRUTOR ALL ARGS
 @Data // CRIA OS GETTERS E SETTERS
+@ToString(exclude = "missoes")
 public class NinjaModel {
     @Id // IDENTIFICA MINHA PK (PRIMARY KEY)
     @GeneratedValue(strategy = GenerationType.IDENTITY) // GERA O VALOR DA ID SEQUENCIAL COM NUMEROS

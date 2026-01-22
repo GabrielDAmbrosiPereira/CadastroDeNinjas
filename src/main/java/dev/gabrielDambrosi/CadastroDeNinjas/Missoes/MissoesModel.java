@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor // CRIA O CONSTRUTOR NO ARGS
 @AllArgsConstructor // CRIA O CONSTRUTOR ALL ARGS
 @Data // CRIA OS GETTERS E SETTERS
+@ToString
 public class MissoesModel {
 
     @Id
