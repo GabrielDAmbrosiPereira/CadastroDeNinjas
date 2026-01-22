@@ -45,4 +45,7 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id") // FOREIGN KEY / CHAVE ESTRANGEIRA - ADICIONA UMA COLUNA NA TABELA CADASTRO COM O MISSOES ID DA CLASSE MISSOESMODEL (FK)
     private MissoesModel missoes;
 
+    @Column(name = "rank")
+    private String rank;
+
 }
