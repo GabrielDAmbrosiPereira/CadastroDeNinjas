@@ -45,7 +45,25 @@ public class NinjaService {
     public NinjaDTO atualizarNinja(Long id, NinjaDTO ninjaDTO){
         Optional<NinjaModel> ninjaExistente = ninjaRepository.findById(id);
         if (ninjaExistente.isPresent()){
-            NinjaModel ninjaAtualizado = ninjaMapper.map(ninjaDTO);
+            NinjaModel ninjaAtualizado = ninjaExistente.get();
+            if (ninjaDTO.getNome() != null)
+                ninjaAtualizado.setNome(ninjaDTO.getNome());
+
+            if (ninjaDTO.getEmail() != null)
+                ninjaAtualizado.setEmail(ninjaDTO.getEmail());
+
+            if (ninjaDTO.getIdade() != null)
+                ninjaAtualizado.setIdade(ninjaDTO.getIdade());
+
+            if (ninjaDTO.getImgUrl() != null)
+                ninjaAtualizado.setImgUrl(ninjaDTO.getImgUrl());
+
+            if (ninjaDTO.getRank() != null)
+                ninjaAtualizado.setRank(ninjaDTO.getRank());
+
+            if (ninjaDTO.getMissoes() != null)
+                ninjaAtualizado.setMissoes(ninjaDTO.getMissoes());
+
             ninjaAtualizado.setId(id);
             NinjaModel ninjaSalvo = ninjaRepository.save(ninjaAtualizado);
             return ninjaMapper.map(ninjaSalvo);
