@@ -54,4 +54,19 @@ public class NinjaControllerUI {
         return "redirect:/ninjas/ui/listar";
     }
 
+    @GetMapping("/alterar/{id}")
+    public String alterarNinjaFormulario(@PathVariable Long id, Model model) {
+        NinjaDTO ninja = ninjaService.listarNinjasPorId(id);
+        model.addAttribute("ninja", ninja);
+        return "alterarNinja";
+    }
+    @PostMapping("/alterar/{id}")
+    public String alterarNinja(
+            @PathVariable Long id,
+            @ModelAttribute NinjaDTO ninjaDTO) {
+
+        ninjaService.atualizarNinja(id, ninjaDTO);
+        return "redirect:/ninjas/ui/listar";
+    }
+
 }
